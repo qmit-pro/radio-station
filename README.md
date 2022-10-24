@@ -1,47 +1,57 @@
-# Getting Started with Create React App
+# 규칙정하기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### branch
+```markdown
+master : 제품으로 출시될 수 있는 브랜치
+develop : 다음 출시 버전을 개발하는 브랜치
+feat : 기능을 개발하는 브랜치
+```
 
-## Available Scripts
+```markdown
+* feat/feature number/해결 내용
 
-In the project directory, you can run:
+ex) feat/1035/메인페이지 레이아웃 추가
+```
 
-### `npm start`
+### commit
+```markdown
+- feat 		: 새로운 기능 추가
+- fix 		: 버그 수정
+- docs 		: 문서 수정
+- style 	: 코드 formatting, 세미콜론(;) 누락, 코드 변경이 없는 경우
+- refactor 	: 코드 리팩토링
+- test 		: 테스트 코드, 리팽토링 테스트 코드 추가
+- chore 	: 빌드 업무 수정, 패키지 매니저 수정
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+# 프로젝트 설명 및 디자인
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+전세계 라디오 방송국의 현황(인기있는 방송국, 폐쇄된 방송국 등)에 대해 살펴보고 해당 방송국을 클릭하면 상세페이지를 모달로 확인이 가능한 홈페이지
 
-### `npm run build`
+![](./src/imgs/design.jpg)
+<img src="">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# TODO-LIST
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [ ] 페이지 레이아웃(2h)
 
-### `npm run eject`
+- [ ] API 연동해서 리스트 페이지 뿌리기(4h)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [ ] 인기순으로 리스트 정렬(3h)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ ] 체크박스 클릭 시 현재 운영 중인 방송국만 보이기(2h)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [ ] 리스트 페이지 무한스크롤 적용(2h)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [ ] 해당 리스트 호버 시 음악 재생(5h)
 
-## Learn More
+- [ ] 해당 리스트 클릭 시 모달 띄우기(3h)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [ ] 모달에 라디오 상세페이지 구현(4h)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# radio-station
+- [ ] 신규 라디오 방송국 등록 페이지 구현(5h)
+
+
