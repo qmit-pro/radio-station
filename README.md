@@ -8,9 +8,11 @@ feat : 기능을 개발하는 브랜치
 ```
 
 ```markdown
-* feat/feature number/해결 내용
+* feat/feature name/해결 내용
 
-ex) feat/1035/메인페이지 레이아웃 추가
+ex)
+ docs/feat2/리드미 수정
+ feat/feat13/메인페이지 레이아웃 추가
 ```
 
 ### commit
@@ -31,7 +33,6 @@ ex) feat/1035/메인페이지 레이아웃 추가
 전세계 라디오 방송국의 현황(인기있는 방송국, 폐쇄된 방송국 등)에 대해 살펴보고 해당 방송국을 클릭하면 상세페이지를 모달로 확인이 가능한 홈페이지
 
 ![](./src/imgs/design.jpg)
-<img src="">
 
 
 # TODO-LIST
