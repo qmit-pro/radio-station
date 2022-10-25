@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ListPage from './pages/list';
+import AddPage from './pages/add';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<ListPage />}/>
+      <Route path="/radio-station" element={<ListPage />}/>
+      {/* <Route path="/radio-station/[해당페이지]" element={<DetailPage />}/> */}
+      <Route path="/add-radio-station" element={<AddPage />}/>
+    </Routes>
+   </BrowserRouter>
   );
 }
 
