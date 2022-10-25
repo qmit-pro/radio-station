@@ -1,4 +1,4 @@
-export default function RadioStationAddContainer() {
+export default function RadioStationNewContainer() {
   return(
     <div>
       등록페이지에요

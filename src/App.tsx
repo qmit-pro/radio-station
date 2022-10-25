@@ -1,16 +1,16 @@
-import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import './App.css';
 import ListPage from './pages/list';
-import AddPage from './pages/add';
+import NewPage from "./pages/new";
 
 function App() {
   return (
    <BrowserRouter>
     <Routes>
       <Route path="/" element={<ListPage />}/>
-      <Route path="/radio-station" element={<ListPage />}/>
-      {/* <Route path="/radio-station/[해당페이지]" element={<DetailPage />}/> */}
-      <Route path="/add-radio-station" element={<AddPage />}/>
+      <Route path="/radio-stations" element={<ListPage />}/>
+      <Route path="/radio-stations/new" element={<NewPage />}/>
     </Routes>
    </BrowserRouter>
   );
