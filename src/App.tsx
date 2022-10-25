@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import './App.css';
-import ListPage from './pages/list';
+import "./App.css";
+import ListPage from "./pages/list";
 import NewPage from "./pages/new";
 
 function App() {
