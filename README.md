@@ -29,12 +29,15 @@ ex)
 
 * 구조
   [관련 용어]: [처리한 내용]
+
+* 주의사항
+  commit 할때는 - 대신 한칸 띄워서 부가설명 해주는 것이 좋음
 ```
 
 ```markdown
 ex)
-  feat: add-layout
-  docs: edit-README
+  feat: add layout
+  docs: fix readme
 ```
 
 
