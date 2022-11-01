@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getDetailApi } from "../apis/apis";
 
+import { getDetailApi } from "../apis/detail-api";
 import RadioStationDetail from "../components/detail/radio-station-detail";
 
 export default function RadioStationDetailContainer() {
