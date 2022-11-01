@@ -1,42 +1,40 @@
 import styled from "@emotion/styled";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import RadioStationList, {
   RadioList,
 } from "../components/list/radio-station-list";
 
 export default function RadioStationListContainer() {
+  const navigation = useNavigate();
+
   const [radioList, setRadioList] = useState<RadioList[]>([]);
 
   const radioStationList = radioList.filter(
-    (arr, index, callback) =>
+    (callback, index, arr) =>
       index ===
-      callback.findIndex((radioStation) => radioStation.name === arr.name)
+      arr.findIndex(
+        (radioStation) => radioStation.stationuuid === callback.stationuuid
+      )
   );
 
-  radioStationList.sort((a, b) => {
-    if (a.name === b.name) return 0;
-    else return 1;
-  });
+  const onClickRadioStation = (stationuuid: string) => {
+    navigation(`/radio-stations/${stationuuid}`, { state: { stationuuid } });
+  };
 
   useEffect(() => {
-    const callAPI = async () => {
-      try {
-        const result = await axios.get(
-          "http://all.api.radio-browser.info/json/stations/byname/pop"
-        );
-        setRadioList(result.data);
-      } catch (error) {
-        alert((error as Error).message);
-      }
-    };
-    callAPI();
+    fetch("http://all.api.radio-browser.info/json/stations/byname/pop?limit=20")
+      .then((res) => res.json())
+      .then(setRadioList);
   }, []);
 
   return (
     <RadioStationListWrapper>
-      <RadioStationList radioList={radioStationList} />
+      <RadioStationList
+        radioList={radioStationList}
+        onClickRadioStation={onClickRadioStation}
+      />
     </RadioStationListWrapper>
   );
 }
