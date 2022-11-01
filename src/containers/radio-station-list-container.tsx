@@ -11,16 +11,8 @@ export default function RadioStationListContainer() {
 
   const [radioList, setRadioList] = useState<RadioList[]>([]);
 
-  const radioStationList = radioList.filter(
-    (callback, index, arr) =>
-      index ===
-      arr.findIndex(
-        (radioStation) => radioStation.stationuuid === callback.stationuuid
-      )
-  );
-
   const onClickRadioStation = (stationuuid: string) => {
-    navigation(`/radio-stations/${stationuuid}`, { state: { stationuuid } });
+    navigation(`/radio-stations/${stationuuid}`);
   };
 
   useEffect(() => {
@@ -32,7 +24,7 @@ export default function RadioStationListContainer() {
   return (
     <RadioStationListWrapper>
       <RadioStationList
-        radioList={radioStationList}
+        radioList={radioList}
         onClickRadioStation={onClickRadioStation}
       />
     </RadioStationListWrapper>
