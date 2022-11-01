@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { getListApi } from "../apis/list-api";
 import RadioStationList, {
   RadioList,
 } from "../components/list/radio-station-list";
@@ -16,9 +17,7 @@ export default function RadioStationListContainer() {
   };
 
   useEffect(() => {
-    fetch("http://all.api.radio-browser.info/json/stations/byname/pop?limit=20")
-      .then((res) => res.json())
-      .then(setRadioList);
+    getListApi().then(setRadioList);
   }, []);
 
   return (
