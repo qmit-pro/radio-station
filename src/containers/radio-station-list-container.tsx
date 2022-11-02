@@ -8,10 +8,6 @@ import RadioStationList, {
 } from "../components/list/radio-station-list";
 import RadioStationListFilter from "../components/list/radio-station-list-filter";
 
-interface FilterList {
-  votes: number;
-}
-
 export default function RadioStationListContainer() {
   const navigation = useNavigate();
 
@@ -24,11 +20,13 @@ export default function RadioStationListContainer() {
   const handleChange = async (args: { value: string }) => {
     const { value } = args;
 
-    const ascRadioList = await getListApi();
-    const popularList = await popularListApi();
-
-    if (value === "인기순") setRadioList(popularList);
-    if (value === "가나다순") setRadioList(ascRadioList);
+    if (value === "가나다순") {
+      const ascRadioList = await getListApi();
+      return setRadioList(ascRadioList);
+    } else if (value === "인기순") {
+      const popularList = await popularListApi();
+      return setRadioList(popularList);
+    }
   };
 
   useEffect(() => {

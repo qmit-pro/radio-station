@@ -6,10 +6,6 @@ export const getListApi = () =>
   );
 
 export const popularListApi = () =>
-  fetch(`http://all.${commonUrl}/stations/byname/pop?limit=20`)
-    .then((res) => res.json())
-    .then((res) =>
-      res.sort(
-        (a: { votes: number }, b: { votes: number }) => b.votes - a.votes
-      )
-    );
+  fetch(
+    `http://all.${commonUrl}/stations/byname/pop?order=votes&reverse=true&limit=20`
+  ).then((res) => res.json());
