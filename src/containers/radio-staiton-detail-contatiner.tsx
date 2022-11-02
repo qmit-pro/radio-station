@@ -1,13 +1,24 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { getDetailApi } from "../apis/detail-api";
-import RadioStationDetail from "../components/detail/radio-station-detail";
+import RadioStationDetail, {
+  RadioStation,
+} from "../components/detail/radio-station-detail";
 
 export default function RadioStationDetailContainer() {
-  const [radioStation, setRadioStation] = useState("");
+  const { stationuuid } = useParams();
+
+  const [radioStation, setRadioStation] = useState<RadioStation>({
+    name: "",
+    url: "",
+    message: "",
+  });
 
   useEffect(() => {
-    getDetailApi().then(setRadioStation);
+    if (stationuuid) {
+      getDetailApi(stationuuid).then(setRadioStation);
+    }
   }, []);
 
   return <RadioStationDetail radioStation={radioStation} />;

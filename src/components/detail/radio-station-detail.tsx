@@ -1,12 +1,13 @@
 import * as F from "./radio-station-detail-styles";
 
 export interface Props {
-  radioStation: any;
+  radioStation: RadioStation;
 }
 
 export interface RadioStation {
   name: string;
   url: string;
+  message: string;
 }
 
 export default function RadioStationDetail({ radioStation }: Props) {
