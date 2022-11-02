@@ -1,3 +1,5 @@
+import * as F from "./radio-station-detail-styles";
+
 export interface Props {
   radioStation: RadioStation;
 }
@@ -10,11 +12,10 @@ export interface RadioStation {
 
 export default function RadioStationDetail({ radioStation }: Props) {
   return (
-    // TODO: 진행예정입니다
-    <div>
-      <div>이름: {radioStation.name}</div>
-      <div>url: {radioStation.url}</div>
-      <div>message: {radioStation.message}</div>
-    </div>
+    <F.DetailWrapper>
+      <F.RadioStationName>{radioStation.name}</F.RadioStationName>
+      <video src={radioStation.url} controls autoPlay height="200px"></video>
+      <div>{radioStation.message}</div>
+    </F.DetailWrapper>
   );
 }
