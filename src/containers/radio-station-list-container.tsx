@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { getListApi, popularListApi } from "../apis/list-api";
+import { getListApi } from "../apis/list-api";
 import RadioStationList, {
   RadioList,
 } from "../components/list/radio-station-list";
@@ -20,17 +20,17 @@ export default function RadioStationListContainer() {
   const handleChange = async (args: { value: string }) => {
     const { value } = args;
 
-    if (value === "가나다순") {
-      const ascRadioList = await getListApi();
-      return setRadioList(ascRadioList);
-    } else if (value === "인기순") {
-      const popularList = await popularListApi();
-      return setRadioList(popularList);
+    if (value === "names") {
+      const ascRadioList = await getListApi("name&limit=20");
+      setRadioList(ascRadioList);
+    } else if (value === "votes") {
+      const popularList = await getListApi("votes&reverse=true&limit=20");
+      setRadioList(popularList);
     }
   };
 
   useEffect(() => {
-    getListApi().then(setRadioList);
+    getListApi("name&limit=20").then(setRadioList);
   }, []);
 
   return (

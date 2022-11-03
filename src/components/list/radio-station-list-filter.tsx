@@ -16,8 +16,8 @@ export default function RadioStationListFilter({ handleChange }: Props) {
       style={{ width: "100px", height: "30px", cursor: "pointer" }}
       onChange={onChangeSelectList}
     >
-      <option value="가나다순">가나다순</option>
-      <option value="인기순">인기순</option>
+      <option value="names">가나다순</option>
+      <option value="votes">인기순</option>
     </select>
   );
 }
