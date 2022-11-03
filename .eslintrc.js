@@ -24,6 +24,6 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/dot-notation": "off"
+    "@typescript-eslint/dot-notation": "off",
   },
 };
