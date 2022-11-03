@@ -6,10 +6,16 @@ type GetListApi = (args: {
   order: string;
   reverse: boolean;
   limit: number;
+  hidebroken: boolean;
 }) => Promise<RadioList[]>;
 
-export const getListApi: GetListApi = ({ order, reverse, limit }) => {
+export const getListApi: GetListApi = ({
+  order,
+  reverse,
+  limit,
+  hidebroken,
+}) => {
   return fetch(
-    `http://all.${commonUrl}/stations/byname/pop?order=${order}&reverse=${reverse}&limit=${limit}`
+    `http://all.${commonUrl}/stations/byname/pop?order=${order}&reverse=${reverse}&limit=${limit}&hidebroken=${hidebroken}`
   ).then((res) => res.json());
 };
