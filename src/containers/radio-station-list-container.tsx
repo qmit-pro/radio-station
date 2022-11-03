@@ -21,16 +21,28 @@ export default function RadioStationListContainer() {
     const { value } = args;
 
     if (value === "names") {
-      const ascRadioList = await getListApi("name&limit=20");
+      const ascRadioList = await getListApi({
+        order: "name",
+        reverse: false,
+        limit: 20,
+      });
       setRadioList(ascRadioList);
     } else if (value === "votes") {
-      const popularList = await getListApi("votes&reverse=true&limit=20");
+      const popularList = await getListApi({
+        order: "votes",
+        reverse: true,
+        limit: 20,
+      });
       setRadioList(popularList);
     }
   };
 
   useEffect(() => {
-    getListApi("name&limit=20").then(setRadioList);
+    getListApi({
+      order: "name",
+      reverse: false,
+      limit: 20,
+    }).then(setRadioList);
   }, []);
 
   return (
