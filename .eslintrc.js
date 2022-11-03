@@ -25,5 +25,6 @@ module.exports = {
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/dot-notation": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
   },
 };
