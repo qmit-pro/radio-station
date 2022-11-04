@@ -24,23 +24,13 @@ export default function RadioStationListContainer() {
     const { value } = args;
     setFilterValue(value);
 
-    if (value === "name") {
-      const ascRadioList = await getListApi({
-        order: value,
-        reverse: false,
-        limit: 20,
-        hidebroken: false,
-      });
-      setRadioList(ascRadioList);
-    } else if (value === "votes") {
-      const popularList = await getListApi({
-        order: value,
-        reverse: true,
-        limit: 20,
-        hidebroken: false,
-      });
-      setRadioList(popularList);
-    }
+    const selectRadioList = await getListApi({
+      order: value,
+      reverse: value !== "name",
+      limit: 20,
+      hidebroken: false,
+    });
+    setRadioList(selectRadioList);
   };
 
   const handleChangeCheckbox = async (checked: boolean) => {
