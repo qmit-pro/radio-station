@@ -12,15 +12,15 @@ const inputValues = {
 export default function RadioStationNewContainer() {
   const navigation = useNavigate();
 
-  const [newRadioInputs, setNewRadioInputs] = useState(inputValues);
+  const [radioInputs, setRadioInputs] = useState(inputValues);
 
-  const { name, favicon } = newRadioInputs;
+  const { name, favicon } = radioInputs;
 
   const handleChangeInput = (args: { name: string; value: string }) => {
     const { name, value } = args;
 
-    setNewRadioInputs({
-      ...newRadioInputs,
+    setRadioInputs({
+      ...radioInputs,
       [name]: value,
     });
   };
@@ -28,7 +28,7 @@ export default function RadioStationNewContainer() {
   const onClickSubmit = async () => {
     await getNewApi({ name, favicon });
 
-    setNewRadioInputs(inputValues);
+    setRadioInputs(inputValues);
     navigation("/radio-stations");
   };
 
