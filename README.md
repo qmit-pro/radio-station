@@ -66,4 +66,4 @@ docs: fix readme
 
 - [x] 상세페이지 구현(4h / 4h) (feat/add-detail)
 
-- [ ] 신규 라디오 방송국 등록 페이지 구현(5h)
+- [x] 신규 라디오 방송국 등록 페이지 구현(5h / 4h) (feat/add-new-radiostation)
