@@ -16,6 +16,6 @@ export const getListApi: GetListApi = ({
   hidebroken,
 }) => {
   return fetch(
-    `http://all.${commonUrl}/stations/byname/pop?order=${order}&reverse=${reverse}&limit=${limit}&hidebroken=${hidebroken}`
+    `http://all.${commonUrl}/stations/bytag/pop?order=${order}&reverse=${reverse}&limit=${limit}&hidebroken=${hidebroken}`
   ).then((res) => res.json());
 };
