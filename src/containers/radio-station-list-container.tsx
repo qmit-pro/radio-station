@@ -23,37 +23,21 @@ export default function RadioStationListContainer() {
   const handleChange = async (args: { value: string }) => {
     const { value } = args;
     setFilterValue(value);
-
-    const selectRadioList = await getListApi({
-      order: value,
-      reverse: value !== "name",
-      limit: 20,
-      hidebroken: false,
-    });
-    setRadioList(selectRadioList);
   };
 
   const handleChangeCheckbox = async (checked: boolean) => {
     if (checked) setIsChecked(true);
     if (!checked) setIsChecked(false);
-
-    const result = await getListApi({
-      order: filterValue === "name" ? "name" : "votes",
-      reverse: filterValue !== "name",
-      limit: 20,
-      hidebroken: checked,
-    });
-    setRadioList(result);
   };
 
   useEffect(() => {
     getListApi({
-      order: "name",
-      reverse: false,
+      order: filterValue === "name" ? "name" : "votes",
+      reverse: filterValue !== "name",
       limit: 20,
-      hidebroken: false,
+      hidebroken: isChecked,
     }).then(setRadioList);
-  }, []);
+  }, [filterValue, isChecked]);
 
   return (
     <RadioStationListWrapper>

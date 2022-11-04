@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const HeaderWrapper = styled.main`
   height: 80px;
@@ -8,12 +8,12 @@ export const HeaderWrapper = styled.main`
   justify-content: space-between;
   align-items: center;
   padding: 0px 30px;
-`
+`;
 
 export const Logo = styled.img`
   width: 100px;
   cursor: pointer;
-`
+`;
 
 export const HeaderMenuWrapper = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const HeaderMenuWrapper = styled.div`
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-`
+`;
 
 export const HeaderMenu = styled.button`
   border: none;
@@ -31,5 +31,4 @@ export const HeaderMenu = styled.button`
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-`
-
+`;
