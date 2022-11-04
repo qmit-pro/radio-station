@@ -56,7 +56,7 @@ docs: fix readme
 
 - [x] 인기순으로 리스트 정렬(3h / 6h) (feat/filter-popular-list)
 
-- [x] 체크박스 클릭 시 현재 운영 중인 방송국만 보이기(2h / 6h) (feat/filter-operating-stations-list)
+- [x] 체크박스 클릭 시 현재 운영 중인 방송국만 보이기(2h / 8h) (feat/filter-operating-stations-list)
 
 - [ ] 리스트 페이지 무한스크롤 적용(2h)
 
